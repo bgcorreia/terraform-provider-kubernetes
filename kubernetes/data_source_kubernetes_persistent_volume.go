@@ -17,7 +17,7 @@ func dataSourceKubernetesPersistentVolume() *schema.Resource {
 				Optional:    true,
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
-						"azureFile": {
+						"azure_file": {
 							Type:        schema.TypeList,
 							Description: "The list of ports that are exposed by this service. More info: http://kubernetes.io/docs/user-guide/services#virtual-ips-and-service-proxies",
 							MinItems:    1,
@@ -58,5 +58,5 @@ func dataSourceKubernetesPersistentVolumeRead(d *schema.ResourceData, meta inter
 	}
 	d.SetId(buildId(om))
 
-	return resourceKubernetesPersistentVolumeClaimRead(d, meta)
+	return resourceKubernetesPersistentVolumeRead(d, meta)
 }

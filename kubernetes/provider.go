@@ -147,6 +147,7 @@ func Provider() terraform.ResourceProvider {
 			"kubernetes_storage_class":           dataSourceKubernetesStorageClass(),
 			"kubernetes_pod":                     dataSourceKubernetesPod(),
 			"kubernetes_persistent_volume_claim": dataSourceKubernetesPersistentVolumeClaim(),
+			"kubernetes_persistent_volume":       dataSourceKubernetesPersistentVolume(),
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
@@ -166,7 +167,6 @@ func Provider() terraform.ResourceProvider {
 			"kubernetes_limit_range":                      resourceKubernetesLimitRange(),
 			"kubernetes_namespace":                        resourceKubernetesNamespace(),
 			"kubernetes_network_policy":                   resourceKubernetesNetworkPolicy(),
-			"kubernetes_persistent_volume":                resourceKubernetesPersistentVolume(),
 			"kubernetes_persistent_volume_claim":          resourceKubernetesPersistentVolumeClaim(),
 			"kubernetes_pod":                              resourceKubernetesPod(),
 			"kubernetes_pod_disruption_budget":            resourceKubernetesPodDisruptionBudget(),
